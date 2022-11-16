@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+
+    --SoftBlue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+
+    --VeryDarkBlueMAINBG: hsl(216, 54%, 11%);
+    --VeryDarkBlueCARDBG: #14253e;
+    --VeryDarkBlueLINE: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+*{
+    box-sizing: border-box;
+}
+div{
+    display: flex;
+    align-items: center;
+}
+body{
+    height: 100vh;
+    margin: 0;
+
+    display: grid;
+    place-items: center;
+
+    background-color: var(--VeryDarkBlueMAINBG);
+}
+
+@media(max-width:475px){
+    .Card{
+        padding: 1rem;
+        width: 18rem;
+    }
+    .NFT-preview > img{
+        width: 16rem;
+    }
+}
+
+@media(min-width:476px){
+    .Card{
+        padding: 1.5rem;
+        width: 22rem;
+    }
+    .NFT-preview > img{
+        width: 19rem;
+    }
+}
+
+.Card{
+    background-color: var(--VeryDarkBlueCARDBG);
+    color: var(--SoftBlue);
+
+    border-radius: 1rem;
+
+    box-shadow: 1px 7px 20px 0px rgba(0,0,0,0.7);
+}
+
+.NFT-preview{
+    position: relative;
+}
+.NFT-preview > img{
+    border-radius: 0.5rem;
+}
+.Overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+.Overlay > img{
+    z-index: 2;
+    transform: translateX(8rem);
+    display: none;
+}
+.Overlay:hover .Overlay{
+    opacity: 0.4;
+}
+.Overlay:hover, .Overlay > img{
+    display: flex;
+    opacity: 1;
+}
+
+.Preview{
+    width: 100%;
+    height: 100%;
+    background-color: var(--Cyan);
+    opacity: 0.5;
+    position:absolute;
+    z-index: 1;
+}
+
+
+.Card-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Name{
+    color: var(--White);
+    font-size: 1.5rem;
+}
+.Name:hover{
+    color: var(--Cyan);
+    transition: all 0.3s;
+}
+
+.Clock{
+    padding-right: 0.5rem;
+}
+
+.Price{
+    color: var(--Cyan);
+    font-weight: 400;
+}
+.ETH{
+    padding-right: 0.5rem;
+}
+
+hr{
+    border: none;
+    border-top: 1px solid var(--VeryDarkBlueLINE);
+}
+
+.Creator{
+    display: flex;
+}
+.Creator > img{
+    width: 2rem;
+    outline: 1px solid var(--White);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.Author-link{
+    color: var(--White);
+    text-decoration: none;
+}
+.Author-link:hover{
+    color: var(--Cyan);
+    transition: all 0.2s;
+}
